@@ -1,0 +1,51 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">DashBoard</h1>
+    <a routerLink="student-form" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add Student</a>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Table</h6>
+    </div>
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>D.O.B</th>
+                        <th>Skills</th>
+                        <th>Department</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Address line 1</th>
+                        <th>ZipCode</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let data of datas; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{data.studentName}}</td>
+                        <td>{{data.dob}}</td>
+                        <td>{{data.skills}}</td>
+                        <td>{{data.department}}</td>
+                        <td>{{data.country}}</td>
+                        <td>{{data.state}}</td>
+                        <td>{{data.city}}</td>
+                        <td>{{data.address}}</td>
+                        <td>{{data.zipcode}}</td>
+                        <td>
+                            <button [routerLink]="['/edit-student',data._id]" class="btn btn-primary btn-sm m-2">Edit</button>
+                            <button class="btn btn-danger btn-sm" (click)="deleteStudent(data._id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            </div>
+        </div>
+</div>

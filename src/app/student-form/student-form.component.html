@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Add Student Form</h1>
+        </div>
+    </div>
+    <form [formGroup]="studentForm" (ngSubmit)="submitStudent()">
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">Student Name</label>
+                <input [ngClass]="{
+                    'has-error':f.studentName.touched && f.studentName.invalid,
+                    'has-success' : f.studentName.touched && f.studentName.valid
+                }" type="text" formControlName="studentName" class="form-control">
+                <span style="color:red;"
+                *ngIf="f.studentName.touched && f.studentName.invalid">Please Enter username</span>
+            </div>
+            <div class="col-lg-6">
+                <label for="">Date Of Birth</label>
+                <input [ngClass]="{
+                    'has-error':f.dob.touched && f.dob.invalid,
+                    'has-success' : f.dob.touched && f.dob.valid
+                }" type="date" formControlName="dob" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.dob.touched && f.dob.invalid">Please enter this Field</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">Skills</label>
+                <input [ngClass]="{
+                    'has-error': f.skills.touched && f.skills.invalid,
+                    'has-success' : f.skills.touched && f.skills.valid
+                }" type="text" formControlName="skills" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.skills.touched && f.skills.invalid">Please enter this Field</span>
+            </div>
+            <div class="col-lg-6">
+                <label for="">Department</label>
+                <input [ngClass]="{
+                    'has-error': f.department.touched && f.department.invalid,
+                    'has-success' : f.department.touched && f.department.valid
+                }" type="text" formControlName="department" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.department.touched && f.department.invalid">Please enter this Field</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">Country</label>
+                <input [ngClass]="{
+                    'has-error':f.country.touched && f.country.invalid,
+                    'has-success' : f.country.touched && f.country.valid
+                }" type="text" formControlName="country" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.country.touched && f.country.invalid">Please enter this Field</span>
+            </div>
+            <div class="col-lg-6">
+                <label for="">State</label>
+                <input [ngClass]="{
+                    'has-error':f.state.touched && f.state.invalid,
+                    'has-success' : f.state.touched && f.state.valid
+                }" type="text" formControlName="state" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.state.touched && f.state.invalid">Please enter this Field</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">City</label>
+                <input [ngClass]="{
+                    'has-error':f.city.touched && f.city.invalid,
+                    'has-success' : f.city.touched && f.city.valid
+                }" type="text" formControlName="city" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.city.touched && f.city.invalid">Please enter this Field</span>
+            </div>
+            <div class="col-lg-6">
+                <label for="">Address line 1</label>
+                <input [ngClass]="{
+                    'has-error':f.address.touched && f.address.invalid,
+                    'has-success' : f.address.touched && f.address.valid
+                }" type="text" formControlName="address" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.address.touched && f.address.invalid">Please enter this Field</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="">ZipCode</label>
+                <input [ngClass]="{
+                    'has-error':f.zipcode.touched && f.zipcode.invalid,
+                    'has-success' : f.zipcode.touched && f.zipcode.valid
+                }" type="number" formControlName="zipcode" placeholder="Only numbers" class="form-control">
+                <span style="color:red;"
+                 *ngIf="f.zipcode.touched && f.zipcode.invalid">Please enter this Field</span>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-12">
+                <input type="submit" class="btn btn-primary btn-sm">
+            </div>
+        </div>
+    </form>
+</div>
